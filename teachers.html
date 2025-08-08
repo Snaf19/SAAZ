@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAAZ - Teach or Learn</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="teach-learn-page">
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">SAAZ</a>
+        <div class="nav-links">
+            <a href="teachers.html">Teach or Learn</a>
+            <a href="internships.html">Internships</a>
+            <a href="events.html">Community Events</a>
+            <a href="ai-mentor.html">AI Mentor</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="chat-hub.html">Chat Hub</a>
+            <!-- Removed the login/signup button from this page -->
+            <div id="userLoggedIn" class="user-logged-in" style="display: none;">
+                <span id="loggedInName"></span>
+                <button id="signOutButton" class="nav-button">Sign Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div id="content-wrapper">
+            <h2 class="page-title">Teach or Learn: Your Knowledge Hub</h2>
+
+            <div id="notLoggedIn" class="not-logged-in-message" style="display: none;">
+                <p>You need to be logged in to access the Teach or Learn platform.</p>
+                <p>Please log in or sign up.</p>
+            </div>
+
+            <div id="roleSelection" class="role-selection" style="display: none;">
+                <div class="profile-info">
+                    <h3 class="welcome-heading">Welcome, <span id="displayUserName"></span>!</h3>
+                    <div class="profile-details">
+                        <div class="detail-row">
+                            <span class="detail-label">City:</span>
+                            <span id="displayUserCity"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Stage:</span>
+                            <span id="displayUserOccupation"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Email:</span>
+                            <span id="displayUserEmail"></span>
+                        </div>
+                    </div>
+                </div>
+                <h3>What would you like to do today?</h3>
+                <div class="role-buttons">
+                    <button id="teachBtn">Teach (as a Mentor)</button>
+                    <button id="learnBtn">Learn (as a Student)</button>
+                </div>
+            </div>
+
+            <div id="mentorDashboard" class="dashboard-section" style="display: none;">
+                <h3>Mentor Dashboard: Start Teaching!</h3>
+                <p>Here you can select grades, subjects, and topics to upload your lecture videos.</p>
+                <div class="form-group">
+                    <label for="mentorGrade">Select Grade to Teach:</label>
+                    <select id="mentorGrade">
+                        <option value="">-- Select Grade --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentorSubject">Select Subject:</label>
+                    <select id="mentorSubject" disabled>
+                        <option value="">-- Select Subject --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentorTopic">Select Topic:</label>
+                    <select id="mentorTopic" disabled>
+                        <option value="">-- Select Topic --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="videoUpload">Upload Lecture Video:</label>
+                    <input type="file" id="videoUpload" accept="video/*" disabled>
+                </div>
+                <button id="uploadAndLockBtn" disabled>Upload & Lock Topic</button>
+                <p class="disclaimer-text">
+                    *Once a topic is locked, no other mentor can upload for it. Admin control only.
+                </p>
+            </div>
+
+            <div id="studentDashboard" class="dashboard-section" style="display: none;">
+                <h3>Student Dashboard: Explore Lectures!</h3>
+                <p>Access lectures relevant to your grade or search for specific subjects and topics.</p>
+                <div class="form-group">
+                    <input type="text" id="lectureSearch" placeholder="Search by Subject or Topic...">
+                    <button id="searchLectureBtn">Search</button>
+                </div>
+                <div id="lectureList">
+                    <p class="placeholder-text">Available lectures for your grade will appear here.</p>
+                </div>
+                <div id="videoDisplay" style="margin-top: 30px; display: none;">
+                    <h4 class="video-title">Selected Lecture: <span id="lectureTitle"></span></h4>
+                    <video id="lectureVideo" controls></video>
+                    <div class="video-feedback">
+                        <button id="thumbsUpBtn"><i class="fas fa-thumbs-up"></i> Thumbs Up</button>
+                        <button id="thumbsDownBtn"><i class="fas fa-thumbs-down"></i> Thumbs Down</button>
+                    </div>
+                    <div class="comments-section">
+                        <h5>Comments:</h5>
+                        <div id="commentsList">
+                            <p class="placeholder-text">No comments yet.</p>
+                        </div>
+                        <textarea id="commentInput" placeholder="Add a comment..."></textarea>
+                        <button id="postCommentBtn">Post Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+    <script src="teachers.js"></script>
+</body>
+</html>

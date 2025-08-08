@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAAZ - Your Journey to Success</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">SAAZ</a>
+        <div class="nav-links">
+            <a href="teachers.html">Teach or Learn</a>
+            <a href="internships.html">Internships</a>
+            <a href="events.html">Community Events</a>
+            <a href="ai-mentor.html">AI Mentor</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="chat-hub.html">Chat Hub</a>
+            <!-- This is the login button, now visible by default -->
+            <button id="openLoginModal" class="nav-button">Login / Signup</button>
+            
+            <!-- This is the new signed-in user element, hidden by default -->
+            <div id="userLoggedIn" class="user-logged-in" style="display: none;">
+                <span id="loggedInName"></span>
+                <button id="signOutButton" class="nav-button">Sign Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="scrolling-background"></div> 
+        <div class="hero-content">
+            <h1>SAAZ</h1>
+            <p>Empowering your mind, supporting your journey, securing your future.</p>
+        </div>
+    </header>
+
+    <section class="purpose-section">
+        <h2>Unlocking Your Potential</h2>
+        <p>SAAZ is your comprehensive guide to navigating the exciting world of higher education and career opportunities. We believe every student deserves the chance to achieve their dreams, both within Pakistan and globally. From admission portals to career insights, we're here to light your path forward.</p>
+        <p>Whether you're an intermediate student aiming for your dream university, or a graduate seeking the next step in your professional journey, SAAZ provides the tools, resources, and community support you need to succeed. Explore endless possibilities, get personalized guidance, and connect with a network that helps you thrive.</p>
+    </section>
+
+    <section class="reviews-section">
+        <h2>What Our Students Say</h2>
+        <div class="review-grid">
+            <div class="review-card">
+                <p>"SAAZ made applying to university so much easier! The admission dates and guidelines were a lifesaver. Highly recommend!"</p>
+                <h4>- Fatima K.</h4>
+            </div>
+            <div class="review-card">
+                <p>"The AI mentor feature really helped me understand my options and plan my future. I feel so much more confident now!"</p>
+            </div>
+            <div class="review-card">
+                <p>"Connecting with other students and tutors through SAAZ has been invaluable. Truly a supportive and inspiring community."</p>
+                <h4>- Zara B.</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer class="contact-section">
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+            <p>Have questions or need assistance? We're here to help you every step of the way!</p>
+            <p>Phone: +92 3XX XXXXXXX</p>
+            <p>Email: admin@saaz.com.pk</p>
+        </div>
+    </footer>
+    
+    <div id="loginSignupModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="modal-title">Welcome to SAAZ!</h2>
+            <div id="authForm">
+                <div class="form-group">
+                    <label for="userNameModal">Name:</label>
+                    <input type="text" id="userNameModal" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="userEmailModal">Email:</label>
+                    <input type="email" id="userEmailModal" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="userCityModal">City:</label>
+                    <input type="text" id="userCityModal" placeholder="Your City (e.g., Lahore)" required>
+                </div>
+                <div class="form-group">
+                    <label for="userOccupationModal">Current Educational Stage:</label>
+                    <select id="userOccupationModal" required>
+                        <option value="">-- Select --</option>
+                        <option value="matric">Matric Student</option>
+                        <option value="intermediate">Intermediate Student</option>
+                        <option value="undergraduate">Undergraduate Student</option>
+                        <option value="graduate">Graduate (Bachelors/Masters)</option>
+                        <option value="phd">PhD Student</option>
+                        <option value="professional">Professional</option>
+                    </select>
+                </div>
+                <div class="form-group" id="majorFieldGroup" style="display: none;">
+                    <label for="userMajorModal">Major / Field:</label>
+                    <select id="userMajorModal" required>
+                        <option value="">-- Select Major / Field --</option>
+                    </select>
+                </div>
+                <div class="auth-buttons">
+                    <button id="signupBtnModal">Sign Up</button>
+                    <button id="loginBtnModal">Login</button>
+                </div>
+                <p class="disclaimer">
+                    (For simplicity, signup/login here will create or load a local profile in your browser. No password is required for this demo.)
+                </p>
+            </div>
+            <div id="loggedInPanel" style="display: none; text-align: center;">
+                <h3>Welcome back, <span id="loggedInUserName"></span>!</h3>
+                <p>You are logged in as <span id="loggedInUserOccupation"></span> from <span id="loggedInUserCity"></span>.</p>
+                <p>Your Email: <span id="loggedInUserEmail"></span></p>
+                <p>Your Major: <span id="loggedInUserMajor"></span></p>
+                <button id="logoutBtnModal" class="nav-button">Logout</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+</body>
+</html>

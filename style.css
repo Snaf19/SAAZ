@@ -1,0 +1,1715 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #0d1117;
+    --secondary-color: #161b22;
+    --accent-color: #00ffc8;
+    --text-color: #e6e6e6;
+    --light-text-color: #a8a8a8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Global & Homepage Styling --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5%;
+    background-color: rgba(13, 17, 23, 0.8);
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+}
+
+.nav-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #00e0a5;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 99%, 0% 84%);
+}
+
+.scrolling-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('saaz-hero-background.jpg');
+    background-size: cover;
+    background-position: center 70%;
+    background-attachment: fixed;
+    z-index: -1;
+    filter: brightness(0.6) blur(2px);
+}
+
+.hero-content {
+    padding: 10rem 5rem 3rem 5rem;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+    margin-bottom: 1.25rem;
+    line-height: 1;
+}
+
+.hero-content p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+    background-color: rgba(0, 255, 200, 0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
+    display: inline-block;
+}
+
+.cta-button {
+    display: none;
+}
+
+section {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.purpose-section {
+    background-color: var(--secondary-color);
+}
+
+.purpose-section h2, .reviews-section h2, .contact-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.purpose-section p {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.reviews-section {
+    background-color: var(--primary-color);
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.review-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.2);
+    border-color: var(--accent-color);
+}
+
+.review-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.review-card h4 {
+    margin-top: 1.5rem;
+    color: var(--light-text-color);
+}
+
+.contact-section {
+    background-color: var(--secondary-color);
+    padding: 5rem 5%;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* --- Page-specific Styling for Teach or Learn --- */
+body.teach-learn-page {
+    background-image: url('image_1567a2.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.teach-learn-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+.role-selection, 
+.dashboard-section, 
+.not-logged-in-message {
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    max-width: 800px;
+    margin: 5rem auto;
+    text-align: left;
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.role-selection:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 255, 200, 0.5);
+}
+
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--accent-color);
+    text-align: center;
+    padding-top: 8rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.profile-info {
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 1px dashed var(--light-text-color);
+}
+
+.profile-details {
+    margin-top: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--light-text-color);
+}
+
+.welcome-heading {
+    font-size: 2.5rem;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+    position: relative;
+    padding-bottom: 1rem;
+    animation: welcomeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes welcomeGlow {
+    from {
+        text-shadow: 0 0 10px var(--accent-color);
+    }
+    to {
+        text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+    }
+}
+
+.profile-info p {
+    margin: 0.25rem 0;
+    color: var(--light-text-color);
+}
+
+.role-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.role-buttons button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 1.25rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    min-width: 200px;
+}
+
+.role-buttons button:hover {
+    background-color: #00e0a5;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.8);
+}
+
+.dashboard-section h3 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.dashboard-section button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    width: auto;
+}
+
+.dashboard-section button:hover {
+    background-color: #00e0a5;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(0, 255, 200, 0.5);
+    outline: none;
+}
+
+.not-logged-in-message {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-left: 5px solid #dc3545;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5rem;
+    padding: 3rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 5rem auto;
+}
+
+.not-logged-in-message a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.video-display {
+    text-align: center;
+}
+
+.video-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#lectureVideo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--accent-color);
+}
+
+.video-feedback {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.video-feedback button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.video-feedback #thumbsUpBtn {
+    background-color: var(--accent-color);
+}
+
+.video-feedback #thumbsDownBtn {
+    background-color: #dc3545;
+}
+
+.comments-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.comments-section h5 {
+    color: var(--light-text-color);
+    margin-bottom: 1rem;
+}
+
+#commentsList {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #30363d;
+}
+
+#commentsList p {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    margin: 0.5rem 0;
+}
+
+#commentInput {
+    width: 100%;
+    min-height: 60px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#postCommentBtn {
+    width: 100%;
+    background-color: var(--accent-color);
+}
+
+.placeholder-text {
+    text-align: center;
+    color: var(--light-text-color);
+    font-style: italic;
+}
+
+.disclaimer-text {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* --- Page-specific Styling for Internships & Events Pages --- */
+
+body.internships-page {
+    background-image: url('internships.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.internships-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+body.events-page {
+    background-image: url('events.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.events-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+body.ai-mentor-page {
+    background-image: url('mentor.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.ai-mentor-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+body.admissions-page {
+    background-image: url('admissions.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.admissions-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+/* Page-specific content styles */
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--accent-color);
+    text-align: center;
+    padding-top: 8rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--light-text-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.events-hub, .internship-hub, .mentor-container, .chat-hub-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.admissions-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.admissions-intro-left {
+    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    text-align: left;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.admissions-intro-left h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.admissions-search-results-right {
+    flex: 2;
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.admissions-form-container-right {
+    /* No longer a separate container, its styles are now in admissions-search-results-right */
+}
+
+.admissions-form-container-right button {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+}
+
+.admissions-form-container-right button:hover {
+    background-color: #00e0a5;
+}
+
+.university-results-container {
+    padding: 3rem 0 0 0;
+    text-align: center;
+}
+
+.university-results-container h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.university-card {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.university-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+}
+
+.university-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.university-card .location {
+    font-style: italic;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.university-card p {
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+.university-card .apply-link {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.university-card .apply-link:hover {
+    background-color: #00e0a5;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .admissions-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .admissions-intro-left, .admissions-search-results-right {
+        max-height: none;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;400&display=swap');
+
+:root {
+    --primary-color: #0d1117;
+    --secondary-color: #161b22;
+    --accent-color: #00ffc8;
+    --text-color: #e6e6e6;
+    --light-text-color: #a8a8a8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Global & Homepage Styling --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5%;
+    background-color: rgba(13, 17, 23, 0.8);
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+}
+
+.nav-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #00e0a5;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 99%, 0% 84%);
+}
+
+.scrolling-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('saaz-hero-background.jpg');
+    background-size: cover;
+    background-position: center 70%;
+    background-attachment: fixed;
+    z-index: -1;
+    filter: brightness(0.6) blur(2px);
+}
+
+.hero-content {
+    padding: 10rem 5rem 3rem 5rem;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+    margin-bottom: 1.25rem;
+    line-height: 1;
+}
+
+.hero-content p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+    background-color: rgba(0, 255, 200, 0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
+    display: inline-block;
+}
+
+.cta-button {
+    display: none;
+}
+
+section {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.purpose-section {
+    background-color: var(--secondary-color);
+}
+
+.purpose-section h2, .reviews-section h2, .contact-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.purpose-section p {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.reviews-section {
+    background-color: var(--primary-color);
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.review-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.2);
+    border-color: var(--accent-color);
+}
+
+.review-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.review-card h4 {
+    margin-top: 1.5rem;
+    color: var(--light-text-color);
+}
+
+.contact-section {
+    background-color: var(--secondary-color);
+    padding: 5rem 5%;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* --- Page-specific Styling --- */
+.page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--accent-color);
+    text-align: center;
+    padding-top: 8rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--light-text-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Page Backgrounds & Overlays */
+body.teach-learn-page, body.internships-page, body.events-page, body.ai-mentor-page, body.admissions-page, body.chat-hub-page {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.teach-learn-page::before, body.internships-page::before, body.events-page::before, body.ai-mentor-page::before, body.admissions-page::before, body.chat-hub-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+body.internships-page {
+    background-image: url('internships.jpg') !important;
+}
+
+body.events-page {
+    background-image: url('events.jpg') !important;
+}
+
+body.ai-mentor-page {
+    background-image: url('mentor.jpg') !important;
+}
+
+body.admissions-page {
+    background-image: url('admissions.jpg') !important;
+}
+
+body.chat-hub-page {
+    background-image: url('chat-hub-bg.jpg') !important;
+}
+
+/* --- General Content Hubs (for centering content) --- */
+.internship-hub, .events-hub, .mentor-container, .chat-hub-container, .admissions-layout {
+    max-width: 1200px;
+    margin: 0 auto; /* This centers the container */
+    padding: 2rem 5%;
+}
+
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+}
+
+.search-bar input, .filters select {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--secondary-color);
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input:focus, .filters select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(0, 255, 200, 0.5);
+    outline: none;
+}
+
+.search-bar button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--accent-color);
+    transition: color 0.3s;
+}
+
+.search-bar button:hover {
+    color: #00e0a5;
+}
+
+.post-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.post-button:hover {
+    background-color: #00e0a5;
+}
+
+.filters {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.internship-card, .event-card, .university-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    text-align: left;
+}
+
+.internship-card:hover, .event-card:hover, .university-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+    border-color: var(--accent-color);
+}
+
+.internship-card h3, .event-card h3, .university-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+.internship-card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+}
+
+.internship-card p, .event-card p, .university-card p {
+    font-size: 1rem;
+    color: var(--light-text-color);
+    margin: 0.5rem 0;
+}
+
+.internship-card .location, .internship-card .duration,
+.event-card .location, .event-card .date, .university-card .location {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-top: 0.25rem;
+}
+
+.internship-card .apply-link, .university-card .apply-link {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.internship-card .apply-link:hover, .university-card .apply-link:hover {
+    background-color: #00e0a5;
+}
+
+.login-prompt {
+    font-size: 0.9rem;
+    color: #dc3545;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: var(--light-text-color);
+    font-style: italic;
+}
+
+#map-container {
+    height: 400px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .admissions-layout {
+        flex-direction: column;
+    }
+    .admissions-intro-left, .admissions-search-results-right {
+        max-height: none;
+    }
+}
+/* This centers the main content container for the Chat Hub */
+.chat-hub-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+/* This styles the forum section and its children */
+.forum-section {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forum-section h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.forum-posts {
+    max-height: 400px;
+    overflow-y: auto;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.forum-form {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.forum-form textarea {
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.forum-form button {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.forum-form button:hover {
+    background-color: #00e0a5;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: var(--light-text-color);
+    font-style: italic;
+}
+
+/* Ensure page title is also centered */
+.page-title {
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+}
+/* --- Page-specific Styling for Chat Hub --- */
+body.chat-hub-page {
+    background-image: url('chat-hub-bg.jpg') !important;
+}
+
+body.chat-hub-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+.chat-hub-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: stretch; /* This ensures both columns have the same height */
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.chat-welcome-box, .chat-post-box {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    text-align: left;
+}
+
+.chat-welcome-box h3, .chat-forum-right h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.chat-welcome-box p {
+    font-size: 1rem;
+    color: var(--light-text-color);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.forum-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.forum-form textarea {
+    width: 100%;
+    min-height: 150px; /* Increased height for the textarea */
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.forum-form button {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+}
+
+.forum-form button:hover {
+    background-color: #00e0a5;
+}
+
+.chat-forum-right {
+    flex: 2;
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Contains the scrolling content */
+}
+
+.forum-posts {
+    flex-grow: 1;
+    overflow-y: auto; /* Adds the scrollbar here */
+    padding-right: 1rem;
+    margin-top: 2rem;
+}
+
+.forum-post {
+    background-color: var(--primary-color);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-author {
+    font-weight: 600;
+    color: var(--text-color);
+}
+/* --- Page-specific Styling for Chat Hub --- */
+body.chat-hub-page {
+    background-image: url('chat-hub-bg.jpg') !important;
+}
+
+body.chat-hub-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+
+.chat-hub-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: stretch; /* This ensures both columns have the same height */
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.chat-welcome-box, .chat-post-box {
+    background-color: var(--secondary-color);
+    padding: 2rem; /* Reduced padding to make the box bigger and not so tight */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    text-align: left;
+}
+
+.chat-welcome-box h3, .chat-forum-right h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.chat-welcome-box p {
+    font-size: 1rem;
+    color: var(--light-text-color);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.forum-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.forum-form textarea {
+    width: 100%;
+    min-height: 200px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.forum-form button {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+}
+
+.forum-form button:hover {
+    background-color: #00e0a5;
+}
+
+.chat-forum-right {
+    flex: 2;
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.chat-forum-right h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.forum-posts {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 1rem;
+    margin-top: 2rem;
+}
+
+.forum-post {
+    background-color: var(--primary-color);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-author {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.welcome-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+    text-align: center;
+}
+/* This centers the main content container for the AI Mentor page */
+.mentor-container {
+    max-width: 800px; /* Reduced max-width for a more focused layout */
+    margin: 0 auto;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+/* This styles the chat window and its children */
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+    margin-top: 3rem;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    text-align: left;
+}
+
+.chat-form {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #30363d;
+}
+
+.chat-form input {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-right: 0.75rem;
+}
+
+.chat-form button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+/* Fix for the signed-in user display */
+#userLoggedIn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Adjust this value to increase or decrease the space */
+}
+
+#loggedInName {
+    white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+#signOutButton {
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+}
+/* Add this code to the end of your style.css file */
+
+body.chat-hub-page {
+    background-image: url('chathub.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.admissions-page {
+    background-image: url('Universities.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.admissions-page::before, body.chat-hub-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    z-index: -1;
+}
+#chat-box {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.user {
+    text-align: right;
+    color: blue;
+    margin: 5px 0;
+}
+
+.bot {
+    text-align: left;
+    color: green;
+    margin: 5px 0;
+}
+
+#chat-input {
+    width: 80%;
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+}
+

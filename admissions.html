@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAAZ - Admissions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="admissions-page">
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">SAAZ</a>
+        <div class="nav-links">
+            <a href="teachers.html">Teach or Learn</a>
+            <a href="internships.html">Internships</a>
+            <a href="events.html">Community Events</a>
+            <a href="chat-hub.html">Chat Hub</a>
+            <a href="admissions.html">Admissions</a>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div id="content-wrapper">
+            <h2 class="page-title">University Admissions</h2>
+
+            <div class="admissions-layout">
+                <div id="admissionsIntro" class="admissions-intro-left">
+                    <h3>Welcome, <span id="admissionsUserName"></span>!</h3>
+                    <p>Navigating university admissions can be a daunting process, but we're here to help. Get personalized recommendations based on your academic achievements and interests.</p>
+                </div>
+                
+                <div class="admissions-search-results-right">
+                    <div id="admissionsFormContainer" class="admissions-form-container-right">
+                        <form id="universitySearchForm">
+                            <div class="form-group">
+                                <label for="matricMarks">Matric / O-Level Marks (out of 1100):</label>
+                                <input type="number" id="matricMarks" placeholder="e.g. 935" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="interMarks">Intermediate / A-Level Marks (out of 1100):</label>
+                                <input type="number" id="interMarks" placeholder="e.g. 825" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="desiredMajor">Desired Major:</label>
+                                <select id="desiredMajor" required>
+                                    <option value="">-- Select Major --</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Electrical Engineering">Electrical Engineering</option>
+                                    <option value="Business Administration">Business Administration</option>
+                                    <option value="Pre-Medical">Pre-Medical</option>
+                                    <option value="Fine Arts">Fine Arts</option>
+                                </select>
+                            </div>
+                            <button type="submit">Search for Universities</button>
+                        </form>
+                    </div>
+
+                    <div id="universityResults" class="university-results-container" style="display: none;">
+                        <h3>Recommended Universities for You</h3>
+                        <div id="resultsList" class="results-grid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+    <script src="admissions.js"></script>
+</body>
+</html>
