@@ -1712,4 +1712,74 @@ body.admissions-page::before, body.chat-hub-page::before {
 button {
     padding: 5px 10px;
 }
+/* --- Responsive Design --- */
+
+/* Styles for tablets and smaller screens */
+@media (max-width: 1024px) {
+    /* Main layout containers will switch to a single column */
+    .admissions-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* All content containers will have their max-height removed for vertical stacking */
+    .admissions-intro-left, .admissions-search-results-right {
+        max-height: none;
+    }
+
+    /* Navbar adjustments for smaller screens */
+    .navbar {
+        padding: 0.75rem 2rem;
+    }
+
+    /* Reduce font sizes for better fit on tablets */
+    .hero-content h1 {
+        font-size: 6rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Styles for phones and very small screens */
+@media (max-width: 768px) {
+    /* Further reduce font sizes for mobile screens */
+    .page-title {
+        font-size: 2.5rem;
+        padding-top: 6rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .nav-button {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Adjust the clip-path for a cleaner mobile look */
+    .hero-section {
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 95%);
+    }
+
+    /* Adjust the chat hub layout to a single column */
+    .chat-hub-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+
 
