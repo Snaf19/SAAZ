@@ -19,7 +19,6 @@
             <a href="ai-mentor.html">AI Mentor</a>
             <a href="admissions.html">Admissions</a>
             <a href="chat-hub.html">Chat Hub</a>
-            <!-- Removed the login/signup button from this page -->
             <div id="userLoggedIn" class="user-logged-in" style="display: none;">
                 <span id="loggedInName"></span>
                 <button id="signOutButton" class="nav-button">Sign Out</button>
@@ -31,9 +30,9 @@
         <div id="content-wrapper">
             <h2 class="page-title">Teach or Learn: Your Knowledge Hub</h2>
 
-            <div id="notLoggedIn" class="not-logged-in-message" style="display: none;">
+            <div id="notLoggedIn" class="not-logged-in-message">
                 <p>You need to be logged in to access the Teach or Learn platform.</p>
-                <p>Please log in or sign up.</p>
+                <button class="nav-button" id="loginRedirect">Login / Signup</button>
             </div>
 
             <div id="roleSelection" class="role-selection" style="display: none;">
