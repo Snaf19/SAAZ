@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const forumPosts = document.getElementById('forumPosts');
     const forumInput = document.getElementById('forumInput');
     const forumForm = document.getElementById('forumForm');
-    const chatUserName = document.getElementById('chatUserName');
 
     const getUserProfile = () => {
         const profile = localStorage.getItem('userProfile');
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentUser = getUserProfile();
         if (currentUser) {
             contentWrapper.style.display = 'block';
-            chatUserName.textContent = currentUser.name;
         } else {
             contentWrapper.innerHTML = `
                 <div class="not-logged-in-message" style="text-align: center; margin-top: 5rem;">
