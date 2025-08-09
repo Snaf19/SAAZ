@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const contentWrapper = document.getElementById('content-wrapper');
     const searchInput = document.getElementById('internshipSearchInput');
     const searchButton = document.getElementById('searchButton');
     const filterField = document.getElementById('filterField');
@@ -6,17 +7,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const listingsContainer = document.getElementById('internshipListings');
     const postInternshipBtn = document.getElementById('postInternshipBtn');
 
-    // Helper function to load user data from localStorage
     const getUserProfile = () => {
         const profile = localStorage.getItem('userProfile');
         return profile ? JSON.parse(profile) : null;
     };
     
-    // Determine the user's major for filtering
+    const checkLoginStatus = () => {
+        const currentUser = getUserProfile();
+        if (currentUser) {
+            contentWrapper.style.display = 'block';
+        } else {
+            contentWrapper.innerHTML = `
+                <div class="not-logged-in-message">
+                    <p>You must be logged in to access this content.</p>
+                    <button class="nav-button" id="loginRedirect">Login / Signup</button>
+                </div>
+            `;
+            document.getElementById('loginRedirect').addEventListener('click', () => {
+                document.getElementById('openLoginModal').click();
+            });
+        }
+    };
+    checkLoginStatus();
+
     const currentUser = getUserProfile();
     const userMajor = currentUser ? currentUser.major.toLowerCase().replace(/\s/g, '') : null;
-
-    // Dummy data for internships
+    
     const allInternships = [
         {
             company: 'Tech Innovators Inc.',
@@ -62,6 +78,42 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: '6 months',
             description: 'Join a team working on major infrastructure projects.',
             link: '#'
+        },
+        {
+            company: 'CodeCrafters',
+            role: 'Data Analyst Intern',
+            field: 'computerscience',
+            location: 'islamabad',
+            duration: '3 months',
+            description: 'Analyze large datasets to provide business insights.',
+            link: '#'
+        },
+        {
+            company: 'Design House',
+            role: 'UX/UI Intern',
+            field: 'finearts',
+            location: 'lahore',
+            duration: '4 months',
+            description: 'Work on user interface and experience design for mobile apps.',
+            link: '#'
+        },
+        {
+            company: 'Market Makers',
+            role: 'Market Research Intern',
+            field: 'businessadministration',
+            location: 'karachi',
+            duration: '3 months',
+            description: 'Conduct market research and prepare reports for our clients.',
+            link: '#'
+        },
+        {
+            company: 'Structural Innovators',
+            role: 'Junior Structural Engineer',
+            field: 'civilengineering',
+            location: 'lahore',
+            duration: '6 months',
+            description: 'Assist in designing and analyzing building structures.',
+            link: '#'
         }
     ];
 
@@ -102,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const matchesField = field === 'all' || internship.field === field;
             const matchesLocation = location === 'all' || internship.location === location;
             
-            // Only show internships matching the user's major if logged in
             const matchesMajor = !currentUser || internship.field === userMajor || userMajor === null;
 
             return matchesSearch && matchesField && matchesLocation && matchesMajor;
@@ -111,17 +162,15 @@ document.addEventListener('DOMContentLoaded', () => {
         displayInternships(filteredInternships);
     };
 
-    // Initial display
     filterAndSearch();
 
-    // Event listeners
     searchButton.addEventListener('click', filterAndSearch);
     searchInput.addEventListener('input', filterAndSearch);
     filterField.addEventListener('change', filterAndSearch);
     filterLocation.addEventListener('change', filterAndSearch);
 
-    // Check if user is logged in to show "Post Internship" button
     if (currentUser) {
-        postInternshipBtn.style.display = 'block';
+        // We removed the Post Internship button from the HTML, so this is no longer needed
+        // postInternshipBtn.style.display = 'block';
     }
 });
