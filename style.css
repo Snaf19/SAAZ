@@ -40,39 +40,6 @@ body {
     text-shadow: 0 0 10px var(--accent-color);
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-    text-shadow: 0 0 8px var(--accent-color);
-}
-
-.nav-button {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: background-color 0.3s;
-}
-
-.nav-button:hover {
-    background-color: #00e0a5;
-}
-
 .hero-section {
     position: relative;
     height: 100vh;
@@ -1712,94 +1679,30 @@ body.admissions-page::before, body.chat-hub-page::before {
 button {
     padding: 5px 10px;
 }
-/* --- Responsive Design --- */
+/* --- New Code to Add --- */
 
-/* Styles for tablets and smaller screens */
-@media (max-width: 1024px) {
-    /* Main layout containers will switch to a single column */
-    .admissions-layout {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    /* All content containers will have their max-height removed for vertical stacking */
-    .admissions-intro-left, .admissions-search-results-right {
-        max-height: none;
-    }
-
-    /* Navbar adjustments for smaller screens */
-    .navbar {
-        padding: 0.75rem 2rem;
-    }
-
-    /* Reduce font sizes for better fit on tablets */
-    .hero-content h1 {
-        font-size: 6rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-    }
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
 }
 
-/* Styles for phones and very small screens */
-@media (max-width: 768px) {
-    /* Further reduce font sizes for mobile screens */
-    .page-title {
-        font-size: 2.5rem;
-        padding-top: 6rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 4rem;
-    }
-
-    .logo {
-        font-size: 2rem;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-    }
-
-    .nav-button {
-        padding: 0.5rem 1rem;
-    }
-
-    /* Adjust the clip-path for a cleaner mobile look */
-    .hero-section {
-        clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 95%);
-    }
-
-    /* Adjust the chat hub layout to a single column */
-    .chat-hub-layout {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
-
-:root {
-    --primary-color: #0d1117;
-    --secondary-color: #161b22;
-    --accent-color: #00ffc8;
-    --text-color: #e6e6e6;
-    --light-text-color: #a8a8a8;
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    line-height: 1.6;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
 }
-
-/* --- Global & Homepage Styling --- */
+/* --- Corrected Navigation Bar Layout --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -1814,52 +1717,21 @@ body {
     -webkit-backdrop-filter: blur(10px);
 }
 
-.logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    text-decoration: none;
-    text-shadow: 0 0 10px var(--accent-color);
-}
-
+/* This targets the container for all links and buttons */
 .nav-links {
     display: flex;
     align-items: center;
     gap: 2rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links::-webkit-scrollbar {
-    display: none;
-}
-
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-    text-shadow: 0 0 8px var(--accent-color);
-}
-
-.nav-button {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: background-color 0.3s;
-}
-
-.nav-button:hover {
-    background-color: #00e0a5;
+.nav-links a,
+.nav-links button,
+.nav-links .user-logged-in {
+    /* Ensures consistent spacing and alignment for all nav items */
+    margin-left: 0;
 }
 
 .user-logged-in {
@@ -1867,476 +1739,684 @@ body {
     align-items: center;
     gap: 1.5rem;
 }
+/* --- Corrected Features Section Layout --- */
 
-.user-logged-in span {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--text-color);
-    white-space: nowrap;
+.features {
+    padding: 8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.hero-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.features-header {
     text-align: center;
-    overflow: hidden;
-    color: white;
-    clip-path: polygon(0 0, 100% 0, 100% 99%, 0% 84%);
+    margin-bottom: 5rem;
 }
 
-.scrolling-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('saaz-hero-background.jpg');
-    background-size: cover;
-    background-position: center 70%;
-    background-attachment: fixed;
-    z-index: -1;
-    filter: brightness(0.6) blur(2px);
+.features-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent) 0%, #0EA5E9 50%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero-content {
-    padding: 10rem 5rem 3rem 5rem;
-    border-radius: 10px;
+.features-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.hero-content h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 10rem;
-    color: var(--accent-color);
-    text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
-    margin-bottom: 1.25rem;
-    line-height: 1;
-}
-
-.hero-content p {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.5rem;
-    margin: 0;
-    background-color: rgba(0, 255, 200, 0.1);
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
-    display: inline-block;
-}
-
-section {
-    padding: 5rem 5%;
-    text-align: center;
-}
-
-.purpose-section {
-    background-color: var(--secondary-color);
-}
-
-.purpose-section h2, .reviews-section h2, .contact-section h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 2rem;
-}
-
-.purpose-section p {
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
-}
-
-.reviews-section {
-    background-color: var(--primary-color);
-}
-
-.review-grid {
+.features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+}
+
+.feature-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* --- MINIMAL Features Section Fix --- */
+.features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    margin-top: 3rem !important;
+}
+
+.feature-card {
+    background-color: var(--secondary-color) !important;
+    border: 1px solid #30363d !important;
+    border-radius: 10px !important;
+    padding: 2rem !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.2) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.feature-icon {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.feature-title {
+    font-size: 1.25rem !important;
+    color: var(--accent-color) !important;
+    margin-bottom: 1rem !important;
+}
+
+.feature-description {
+    color: var(--light-text-color) !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+}
+/* --- Remove Hero CTA Buttons --- */
+.hero-cta {
+    display: none !important;
+}
+
+/* --- Features Grid - 3 in a row --- */
+.features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    margin-top: 3rem !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* --- Responsive for smaller screens --- */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* --- Cute Student Reviews Cards --- */
+.reviews-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    margin-top: 3rem !important;
+    max-width: 1000px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .review-card {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid #30363d;
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--secondary-color) !important;
+    padding: 2.5rem !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(0, 255, 200, 0.3) !important;
+    text-align: center !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
 .review-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.2);
-    border-color: var(--accent-color);
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 15px 35px rgba(0, 255, 200, 0.25) !important;
+    border-color: var(--accent-color) !important;
 }
 
-.review-card p {
-    font-style: italic;
-    font-size: 1.1rem;
+.review-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--accent-color), #00e0a5, #8B5CF6) !important;
+    border-radius: 20px 20px 0 0 !important;
 }
 
-.review-card h4 {
-    margin-top: 1.5rem;
-    color: var(--light-text-color);
+.review-quote {
+    font-style: italic !important;
+    font-size: 1.1rem !important;
+    color: var(--text-color) !important;
+    margin-bottom: 2rem !important;
+    line-height: 1.7 !important;
+    position: relative !important;
 }
 
+.review-quote::before {
+    content: '"' !important;
+    font-size: 3rem !important;
+    color: var(--accent-color) !important;
+    position: absolute !important;
+    top: -10px !important;
+    left: -10px !important;
+    opacity: 0.3 !important;
+}
+
+.review-author {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
+}
+
+.author-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    background: linear-gradient(135deg, var(--accent-color), #00e0a5) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+    font-size: 1.1rem !important;
+    box-shadow: 0 4px 15px rgba(0, 255, 200, 0.3) !important;
+}
+
+.author-info h4 {
+    margin: 0 !important;
+    color: var(--accent-color) !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+}
+
+.author-info p {
+    margin: 0.25rem 0 0 0 !important;
+    color: var(--light-text-color) !important;
+    font-size: 0.9rem !important;
+}
+/* --- Fix Navbar Layout - Move items to right --- */
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.75rem 5% !important;
+    background-color: rgba(13, 17, 23, 0.8) !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 90% !important;
+    z-index: 100 !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.nav-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-left: auto !important; /* This pushes everything to the right */
+}
+
+/* Remove any white box/background from nav elements */
+.nav-links a,
+.nav-links button,
+.nav-links .user-logged-in {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.nav-button {
+    background-color: var(--accent-color) !important;
+    color: var(--primary-color) !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    cursor: pointer !important;
+    border-radius: 5px !important;
+    font-weight: 700 !important;
+    transition: background-color 0.3s !important;
+}
+
+.user-logged-in {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    background: none !important;
+}
+
+/* --- Make Review Cards Thicker --- */
+.review-card {
+    background-color: var(--secondary-color) !important;
+    padding: 3rem 2.5rem !important; /* Increased top/bottom padding for thickness */
+    border-radius: 20px !important;
+    border: 2px solid rgba(0, 255, 200, 0.3) !important; /* Thicker border */
+    text-align: center !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important; /* Deeper shadow for thickness */
+    min-height: 250px !important; /* Minimum height for consistency */
+}
+
+.review-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 45px rgba(0, 255, 200, 0.3) !important; /* Even deeper shadow on hover */
+    border-color: var(--accent-color) !important;
+}
+
+.review-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 6px !important; /* Thicker top border */
+    background: linear-gradient(90deg, var(--accent-color), #00e0a5, #8B5CF6) !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+/* --- Fix Missing Features Heading --- */
+.features-header {
+    text-align: center !important;
+    margin-bottom: 4rem !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.features-title {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 2.5rem !important;
+    color: var(--accent-color) !important;
+    margin-bottom: 2rem !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.features-subtitle {
+    font-size: 1.2rem !important;
+    color: var(--light-text-color) !important;
+    max-width: 800px !important;
+    margin: 0 auto 1.5rem !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* --- Remove White Box from Navbar --- */
+.mobile-menu-btn {
+    display: none !important; /* This removes the hamburger menu button */
+}
+
+/* Alternative: If you want to keep the button but remove its white background */
+.mobile-menu-btn {
+    background: none !important;
+    border: none !important;
+    color: var(--accent-color) !important;
+    font-size: 1.5rem !important;
+    padding: 0.5rem !important;
+    cursor: pointer !important;
+}
+
+/* Ensure navbar items are properly aligned */
+.navbar .nav-content {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.navbar .logo {
+    flex-shrink: 0 !important;
+}
+
+.navbar .nav-links {
+    margin-left: auto !important;
+    background: none !important;
+    border: none !important;
+}
+/* --- About Us Section --- */
+.about-us {
+    padding: 8rem 5% 6rem 5% !important;
+    background-color: var(--secondary-color) !important;
+    position: relative !important;
+}
+
+.about-us::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent) !important;
+}
+
+.about-container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+}
+
+.about-content {
+    text-align: center !important;
+    background-color: var(--primary-color) !important;
+    padding: 3rem !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(0, 255, 200, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.about-content::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--accent-color), #00e0a5, #8B5CF6) !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.about-title {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 3rem !important;
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 15px var(--accent-color) !important;
+    margin-bottom: 2rem !important;
+    margin-top: 0 !important;
+}
+
+.about-text {
+    margin-bottom: 3rem !important;
+}
+
+.about-intro {
+    font-size: 1.3rem !important;
+    color: var(--text-color) !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.7 !important;
+}
+
+.about-intro strong {
+    color: var(--accent-color) !important;
+    font-weight: 700 !important;
+}
+
+.about-description {
+    font-size: 1.1rem !important;
+    color: var(--light-text-color) !important;
+    margin-bottom: 2rem !important;
+    line-height: 1.8 !important;
+}
+
+.about-mission {
+    font-size: 1.2rem !important;
+    color: var(--accent-color) !important;
+    font-style: italic !important;
+    margin-bottom: 0 !important;
+    padding: 1.5rem !important;
+    background-color: rgba(0, 255, 200, 0.05) !important;
+    border-radius: 15px !important;
+    border-left: 4px solid var(--accent-color) !important;
+}
+
+.about-stats {
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    margin-top: 3rem !important;
+    padding-top: 2rem !important;
+    border-top: 1px solid rgba(0, 255, 200, 0.2) !important;
+}
+
+.stat-item {
+    text-align: center !important;
+    flex: 1 !important;
+}
+
+.stat-number {
+    display: block !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 10px var(--accent-color) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.stat-label {
+    display: block !important;
+    font-size: 1rem !important;
+    color: var(--light-text-color) !important;
+    font-weight: 600 !important;
+}
+
+/* Responsive design for About Us */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .about-intro {
+        font-size: 1.2rem !important;
+    }
+    
+    .about-stats {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .stat-item {
+        margin-bottom: 1rem !important;
+    }
+    
+    .stat-number {
+        font-size: 2rem !important;
+    }
+}
+/* --- Smooth Scrolling for Navigation Links --- */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* --- Ensure Features Heading is Visible --- */
+.features-header {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    text-align: center !important;
+    margin-bottom: 4rem !important;
+    padding-top: 2rem !important;
+}
+
+.features-title {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 3rem !important;
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 15px var(--accent-color) !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.features-subtitle {
+    font-size: 1.2rem !important;
+    color: var(--light-text-color) !important;
+    max-width: 800px !important;
+    margin: 0 auto 2rem !important;
+    line-height: 1.6 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* --- Navigation Link Styling --- */
+.nav-links a {
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    transition: color 0.3s, text-shadow 0.3s !important;
+    padding: 0.5rem 0 !important;
+    position: relative !important;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 8px var(--accent-color) !important;
+}
+
+/* --- Add smooth scroll offset to account for fixed navbar --- */
+.about-us,
+.features,
+.reviews-section,
 .contact-section {
-    background-color: var(--secondary-color);
-    padding: 5rem 5%;
+    scroll-margin-top: 100px !important;
+}
+.hero-content h1 {
+    filter: none !important;
+}
+.hero-content h1,
+.features-title {
+    filter: none !important;
+    text-shadow: 0 0 15px var(--accent-color) !important;
+}
+/* FINAL FIX - Remove all blur from FEATURES heading */
+.features-title,
+.features-header h2,
+.features-header .features-title {
+    filter: none !important;
+    -webkit-filter: none !important;
+    text-shadow: 0 0 10px var(--accent-color) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 3rem !important;
+    color: var(--accent-color) !important;
+    font-weight: 700 !important;
+    margin-bottom: 2rem !important;
 }
 
-.contact-section p {
-    font-size: 1.1rem;
-    margin-top: 1rem;
+/* Also remove blur from any h1, h2, h3 elements */
+h1, h2, h3, h4, h5, h6 {
+    filter: none !important;
+    -webkit-filter: none !important;
 }
 
-.modal-overlay {
-    display: none;
-    position: fixed;
-    z-index: 200;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: center;
+/* Specifically target the features section */
+#features .features-title {
+    filter: none !important;
+    -webkit-filter: none !important;
+    text-shadow: 0 0 15px var(--accent-color) !important;
+}/* FINAL FIX - Remove all blur from FEATURES heading */
+.features-title,
+.features-header h2,
+.features-header .features-title {
+    filter: none !important;
+    -webkit-filter: none !important;
+    text-shadow: 0 0 10px var(--accent-color) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 3rem !important;
+    color: var(--accent-color) !important;
+    font-weight: 700 !important;
+    margin-bottom: 2rem !important;
 }
 
-.modal-content {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 10px;
+/* Also remove blur from any h1, h2, h3 elements */
+h1, h2, h3, h4, h5, h6 {
+    filter: none !important;
+    -webkit-filter: none !important;
 }
 
-/* --- Page-specific Styling --- */
-.page-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 5%;
+/* Specifically target the features section */
+#features .features-title {
+    filter: none !important;
+    -webkit-filter: none !important;
+    text-shadow: 0 0 15px var(--accent-color) !important;
 }
 
-.page-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    color: var(--accent-color);
-    text-align: center;
-    padding-top: 8rem;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 10px var(--accent-color);
+/* Make Login / Signup button more visible */
+.nav-button {
+    background-color: #00ffc8 !important; /* Brighter accent */
+    color: #0d1117 !important; /* Dark text for contrast */
+    font-size: 1.1rem !important; /* Slightly larger text */
+    padding: 0.85rem 1.8rem !important; /* Bigger clickable area */
+    border-radius: 8px !important; /* More rounded */
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.8) !important; /* Glow effect */
+    transition: all 0.3s ease-in-out !important;
 }
 
-.page-subtitle {
-    font-size: 1.2rem;
-    color: var(--light-text-color);
-    text-align: center;
-    margin-bottom: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+/* Hover effect for Login / Signup button */
+.nav-button:hover {
+    background-color: #00e0a5 !important;
+    transform: scale(1.07) !important;
+    box-shadow: 0 0 25px rgba(0, 255, 200, 1) !important;
+}
+/* Navbar links styled like section headings */
+.nav-links a {
+    font-family: 'Orbitron', sans-serif !important; /* Same as headings */
+    font-weight: 700 !important;
+    color: var(--accent-color) !important; /* Same accent as headings */
+    font-size: 1.2rem !important; /* Big enough for emphasis, not oversized */
+    text-shadow: 0 0 8px var(--accent-color) !important; /* Glow like headings */
+    transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
-.events-hub, .internship-hub, .mentor-container, .chat-hub-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 5%;
+.nav-links a:hover {
+    transform: scale(1.05);
+    color: #00e0a5 !important; /* Slightly different hover color */
 }
-
-.admissions-layout {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 5%;
-    display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-    align-items: flex-start;
+html {
+    scroll-behavior: smooth;
 }
-
-.admissions-intro-left {
-    flex: 1;
-    background-color: var(--secondary-color);
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
-    border: 1px solid rgba(0, 255, 200, 0.2);
-    text-align: left;
-}
-
-.admissions-intro-left h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent-color);
-    font-size: 2rem;
-    margin-top: 0;
-}
-
-.admissions-search-results-right {
-    flex: 2;
-    background-color: var(--secondary-color);
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
-    border: 1px solid rgba(0, 255, 200, 0.2);
-    display: flex;
-    flex-direction: column;
-}
-
-.university-results-container {
-    padding: 3rem 0 0 0;
-    text-align: center;
-}
-
-.university-results-container h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent-color);
-    font-size: 2rem;
-    margin-top: 0;
-}
-
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.university-card {
-    background-color: var(--primary-color);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid #30363d;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
-}
-
-.university-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
-}
-
-.university-card h4 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent-color);
-    font-size: 1.2rem;
-    margin-top: 0;
-}
-
-.university-card .location {
-    font-style: italic;
-    color: var(--light-text-color);
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-.university-card p {
-    font-size: 1rem;
-    margin: 1rem 0;
-}
-
-.university-card .apply-link {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.university-card .apply-link:hover {
-    background-color: #00e0a5;
-}
-
-.admissions-form-container-right button {
-    width: 100%;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-}
-
-.admissions-form-container-right button:hover {
-    background-color: #00e0a5;
-}
-
-.header-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.search-bar {
-    display: flex;
-    flex-grow: 1;
-    position: relative;
-}
-
-.search-bar input, .filters select {
-    width: 100%;
-    padding: 0.75rem 1.25rem;
-    background-color: var(--secondary-color);
-    border: 1px solid #30363d;
-    border-radius: 5px;
-    color: var(--text-color);
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.search-bar input:focus, .filters select:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 5px rgba(0, 255, 200, 0.5);
-    outline: none;
-}
-
-.search-bar button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: none;
-    border: none;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-    color: var(--accent-color);
-    transition: color 0.3s;
-}
-
-.search-bar button:hover {
-    color: #00e0a5;
-}
-
-.post-button {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background-color 0.3s;
-}
-
-.post-button:hover {
-    background-color: #00e0a5;
-}
-
-.filters {
-    display: flex;
-    justify-content: flex-start;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.listings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.internship-card, .event-card {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid #30363d;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    text-align: left;
-}
-
-.internship-card:hover, .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
-    border-color: var(--accent-color);
-}
-
-.internship-card h3, .event-card h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    margin-top: 0;
-}
-
-.internship-card h4 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    margin-top: 0.5rem;
-}
-
-.internship-card p, .event-card p {
-    font-size: 1rem;
-    color: var(--light-text-color);
-    margin: 0.5rem 0;
-}
-
-.internship-card .location, .internship-card .duration,
-.event-card .location, .event-card .date {
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--light-text-color);
-    margin-top: 0.25rem;
-}
-
-.internship-card .apply-link {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.internship-card .apply-link:hover {
-    background-color: #00e0a5;
-}
-
-.login-prompt {
-    font-size: 0.9rem;
-    color: #dc3545;
-    font-style: italic;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.placeholder-text {
-    text-align: center;
-    color: var(--light-text-color);
-    font-style: italic;
-}
-
-#map-container {
-    height: 400px;
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    border: 1px solid var(--accent-color);
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-
-
-
-
