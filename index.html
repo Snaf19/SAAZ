@@ -5,67 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAAZ - Your Journey to Success</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
 
-    <nav class="navbar">
-        <a href="index.html" class="logo">SAAZ</a>
-        <div class="nav-links">
-            <a href="teachers.html">Teach or Learn</a>
-            <a href="internships.html">Internships</a>
-            <a href="events.html">Community Events</a>
-            <a href="ai-mentor.html">AI Mentor</a>
-            <a href="admissions.html">Admissions</a>
-            <a href="chat-hub.html">Chat Hub</a>
-            <!-- This is the login button, now visible by default -->
-            <button id="openLoginModal" class="nav-button">Login / Signup</button>
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">SAAZ</a>
             
-            <!-- This is the new signed-in user element, hidden by default -->
-            <div id="userLoggedIn" class="user-logged-in" style="display: none;">
-                <span id="loggedInName"></span>
-                <button id="signOutButton" class="nav-button">Sign Out</button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About Us</a>
+                <a href="#features">Features</a>
+                <a href="#reviews">Student Reviews</a>
+                <a href="#contact">Contact</a>
+                <button id="openLoginModal" class="nav-button">Login / Signup</button>
+                <div id="userLoggedIn" class="user-logged-in" style="display: none;">
+                    <span id="loggedInName"></span>
+                    <button id="signOutButton" class="nav-button">Sign Out</button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section">
+    <section class="hero-section" id="hero">
         <div class="scrolling-background"></div> 
         <div class="hero-content">
-            <h1>SAAZ</h1>
-            <p>Empowering your mind, supporting your journey, securing your future.</p>
-        </div>
-    </header>
-
-    <section class="purpose-section">
-        <h2>Unlocking Your Potential</h2>
-        <p>SAAZ is your comprehensive guide to navigating the exciting world of higher education and career opportunities. We believe every student deserves the chance to achieve their dreams, both within Pakistan and globally. From admission portals to career insights, we're here to light your path forward.</p>
-        <p>Whether you're an intermediate student aiming for your dream university, or a graduate seeking the next step in your professional journey, SAAZ provides the tools, resources, and community support you need to succeed. Explore endless possibilities, get personalized guidance, and connect with a network that helps you thrive.</p>
-    </section>
-
-    <section class="reviews-section">
-        <h2>What Our Students Say</h2>
-        <div class="review-grid">
-            <div class="review-card">
-                <p>"SAAZ made applying to university so much easier! The admission dates and guidelines were a lifesaver. Highly recommend!"</p>
-                <h4>- Fatima K.</h4>
-            </div>
-            <div class="review-card">
-                <p>"The AI mentor feature really helped me understand my options and plan my future. I feel so much more confident now!"</p>
-            </div>
-            <div class="review-card">
-                <p>"Connecting with other students and tutors through SAAZ has been invaluable. Truly a supportive and inspiring community."</p>
-                <h4>- Zara B.</h4>
-            </div>
+            <h1 class="hero-title">SAAZ</h1>
+            <p class="hero-subtitle">From AI mentorship to university admissions, we provide comprehensive tools and resources tailored for Pakistani students.</p>
         </div>
     </section>
 
-    <footer class="contact-section">
-        <h2>Get in Touch</h2>
-        <div class="contact-info">
-            <p>Have questions or need assistance? We're here to help you every step of the way!</p>
-            <p>Phone: +92 3XX XXXXXXX</p>
-            <p>Email: admin@saaz.com.pk</p>
+    <section class="about-us" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="about-title">About SAAZ</h2>
+                <div class="about-text">
+                    <p class="about-intro">
+                        <strong>SAAZ</strong> is Pakistan's premier educational platform designed exclusively for students who dream big and work hard to achieve their goals. We understand the unique challenges Pakistani students face in their academic journey.
+                    </p>
+                    <p class="about-description">
+                        From navigating complex university admissions to finding the right internship opportunities, from connecting with mentors to building a supportive community – SAAZ bridges the gap between ambition and achievement. Our AI-powered tools, comprehensive resources, and vibrant student community create an ecosystem where every Pakistani student can thrive.
+                    </p>
+                    <p class="about-mission">
+                        <em>"Empowering the next generation of Pakistani leaders, innovators, and change-makers through technology, community, and opportunity."</em>
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Students Helped</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Universities Connected</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Internship Opportunities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="features" id="features">
+            
+        <div class="features-grid">
+            <a href="ai-mentor.html" class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title">AI-Powered Mentor</h3>
+                <p class="feature-description">Get personalized guidance with our advanced AI mentor that understands your academic goals and provides tailored advice for your educational journey.</p>
+            </a>
+
+            <a href="admissions.html" class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3 class="feature-title">University Admissions</h3>
+                <p class="feature-description">Navigate Pakistan's top universities with our comprehensive admissions guide, eligibility checkers, and application tracking system.</p>
+            </a>
+
+            <a href="internships.html" class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3 class="feature-title">Internship Hub</h3>
+                <p class="feature-description">Discover relevant internship opportunities from leading Pakistani companies, filtered by your field of study and career interests.</p>
+            </a>
+
+            <a href="teachers.html" class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3 class="feature-title">Teach or Learn</h3>
+                <p class="feature-description">Connect with fellow students, join study groups, and learn from experienced mentors in our collaborative learning environment.</p>
+            </a>
+
+            <a href="chat-hub.html" class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Chat Hub</h3>
+                <p class="feature-description">A community forum to connect with other students, share thoughts, ask questions, and get peer advice.</p>
+            </a>
+
+            <a href="events.html" class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3 class="feature-title">Community Events</h3>
+                <p class="feature-description">Participate in workshops, competitions, and networking events designed to enhance your skills and expand your opportunities.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+        <div class="reviews-header animate-on-scroll">
+            <h2 class="reviews-title">Student Reviews</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card animate-on-scroll">
+                <p class="review-quote">"SAAZ made applying to university so much easier! The admission dates and guidelines were a lifesaver. Highly recommend!"</p>
+                <div class="review-author">
+                    <div class="author-avatar">AK</div>
+                    <div class="author-info">
+                        <h4>Ahmed Khan</h4>
+                        <p>LUMS Computer Science Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <p class="review-quote">"The AI mentor feature really helped me understand my options and plan my future. I feel so much more confident now!"</p>
+                <div class="review-author">
+                    <div class="author-avatar">SF</div>
+                    <div class="author-info">
+                        <h4>Sara Fatima</h4>
+                        <p>Software Engineering Intern</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <p class="review-quote">"Connecting with other students and tutors through SAAZ has been invaluable. Truly a supportive and inspiring community."</p>
+                <div class="review-author">
+                    <div class="author-avatar">MA</div>
+                    <div class="author-info">
+                        <h4>Muhammad Ali</h4>
+                        <p>Engineering Student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="contact-section" id="contact">
+        <div class="contact-header animate-on-scroll">
+            <h2 class="contact-title">Ready to Transform Your Future?</h2>
+            <p class="contact-subtitle">Join thousands of Pakistani students who are already using SAAZ to achieve their academic and career goals.</p>
+            <div class="contact-cta">
+                <a href="#features" class="nav-button">Start Your Journey</a>
+
+            </div>  
+
         </div>
     </footer>
     
